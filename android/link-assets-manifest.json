@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "app/assets/fonts/CaviarDreams-Bold.ttf",
+      "sha1": "4550f95cd940c01187631bc93d6c59ca1bedeb65"
+    },
+    {
+      "path": "app/assets/fonts/CaviarDreams-BoldItalic.ttf",
+      "sha1": "aa75a3a0bd78238a630e514268fbe70b706136f9"
+    },
+    {
+      "path": "app/assets/fonts/CaviarDreams-Italic.ttf",
+      "sha1": "69add7e1e7953716cca4e183d7ef0f55fecd0571"
+    },
+    {
+      "path": "app/assets/fonts/CaviarDreams.ttf",
+      "sha1": "fdbae680e53ea7f5c7a47d59bc5588553ff97f40"
+    }
+  ]
+}

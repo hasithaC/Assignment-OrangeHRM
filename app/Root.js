@@ -1,14 +1,13 @@
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import NavigationStack from './navigations/NavigationStack';
 
 const Root = () => {
-  return <View style={styles.screen}></View>;
+  return (
+    <NavigationContainer>
+      <NavigationStack />
+    </NavigationContainer>
+  );
 };
 
 export default Root;
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-  },
-});

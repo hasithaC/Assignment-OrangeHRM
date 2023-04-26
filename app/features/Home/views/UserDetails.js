@@ -5,7 +5,7 @@ import {Images} from '../../../theme/Images';
 import {FontSize} from '../../../theme/FontSizes';
 import {Colors} from '../../../theme/Colors';
 import {useDispatch, useSelector} from 'react-redux';
-import {StackActions} from '@react-navigation/native';
+import * as RootNavigation from '../../../navigations/RootNavigation';
 import {setUser} from '../../Onboarding/redux/action/action';
 
 const UserDetails = props => {
@@ -36,9 +36,9 @@ const UserDetails = props => {
             workEmail: '',
           };
           dispatch(setUser(user));
-          props.navigation.dispatch(StackActions.replace('LoginScreen'));
+          RootNavigation.replace('LoginScreen');
         }}>
-        <Text style={styles.logoutButtonText}>{'Logout'}</Text>
+        <Text style={styles.logoutButtonText}>{'Log out'}</Text>
       </TouchableOpacity>
     </View>
   );

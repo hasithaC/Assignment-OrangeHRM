@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {FontSize} from '../../theme/FontSizes';
 import PropTypes from 'prop-types';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from '../../theme/Colors';
 
 const NavigationHeader = props => {
   return (
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.h2,
     lineHeight: 32,
     textAlign: 'center',
+    color: Colors.text.PRIMARY_COLOR,
   },
 });
 

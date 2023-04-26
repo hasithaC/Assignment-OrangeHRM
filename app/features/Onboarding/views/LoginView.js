@@ -16,8 +16,8 @@ import {getAccessToken, setLoadingSpinner} from '../redux/action/action';
 
 const LoginView = props => {
   const dispatch = useDispatch();
-  const [userName, setUserName] = useState('Admin');
-  const [password, setPassword] = useState('@ns@WEn9W@0Y');
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <View style={styles.container}>

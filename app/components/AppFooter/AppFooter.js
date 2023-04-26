@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 8,
     marginBottom: 8,
+    backgroundColor: Colors.SCREEN_BACKGROUND_COLOR,
   },
   title: {
     fontFamily: 'CaviarDreams-Bold',

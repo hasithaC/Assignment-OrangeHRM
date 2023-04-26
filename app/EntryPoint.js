@@ -3,15 +3,13 @@ import React from 'react';
 import Root from './Root';
 import {Provider} from 'react-redux';
 import {store} from './store/store';
-import Counter from './screens/Counter';
 
 const EntryPoint = () => {
   return (
     <Provider store={store}>
-    {/* <View style={{flex: 1}}>
-      <Root />
-    </View> */}
-    <Counter />
+      <View style={{flex: 1}}>
+        <Root />
+      </View>
     </Provider>
   );
 };

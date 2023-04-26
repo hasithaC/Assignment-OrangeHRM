@@ -1,5 +1,7 @@
 import {takeLatest} from 'redux-saga/effects';
 import * as type from '../redux/action/types';
-import {fetchUserDetails} from './onboardingSaga';
+import {fetchAccessTokenResponse} from './onboardingSaga';
 
-export const onboardingSagas = [takeLatest(type.GET_USER, fetchUserDetails)];
+export const onboardingSagas = [
+  takeLatest(type.GET_ACCESS_TOKEN, fetchAccessTokenResponse),
+];

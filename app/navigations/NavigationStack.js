@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {SafeAreaView, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../features/Onboarding/screens/LoginScreen';
@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 const NavigationStack = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Stack.Navigator
         initialRouteName="LoginScreen"
         screenOptions={{
@@ -17,7 +17,7 @@ const NavigationStack = () => {
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
       </Stack.Navigator>
-    </View>
+    </SafeAreaView>
   );
 };
 

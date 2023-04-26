@@ -11,38 +11,53 @@ import {FontSize} from '../../../theme/FontSizes';
 import {Colors} from '../../../theme/Colors';
 import {Images} from '../../../theme/Images';
 import PropTypes from 'prop-types';
-import {StackActions} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
+import {getAccessToken, setLoadingSpinner} from '../redux/action/action';
 
 const LoginView = props => {
-  const [userName, setUserName] = useState('');
+  const dispatch = useDispatch();
+  const [userName, setUserName] = useState('Admin');
+  const [password, setPassword] = useState('@ns@WEn9W@0Y');
+
   return (
     <View style={styles.container}>
-      <TextInput
-        placeholder={'User Name'}
-        value={userName}
-        keyboardType="default"
-        onChangeText={value => setUserName(value)}
-        style={styles.input}
-      />
+      <View style={styles.middleContainer}>
+        <Image
+          resizeMode="contain"
+          style={styles.image}
+          source={Images.orange_hrm}
+        />
+        <TextInput
+          placeholder={'User Name'}
+          value={userName}
+          keyboardType="default"
+          onChangeText={value => setUserName(value)}
+          style={styles.input}
+          placeholderTextColor={Colors.text.PRIMARY_COLOR}
+        />
 
-      <TextInput
-        placeholder={'Password'}
-        value={userName}
-        keyboardType="default"
-        onChangeText={value => setUserName(value)}
-        style={styles.input}
-      />
-      <Image
-        resizeMode="contain"
-        style={styles.image}
-        source={Images.orange_hrm}
-      />
+        <TextInput
+          placeholder={'Password'}
+          value={password}
+          keyboardType="default"
+          onChangeText={value => setPassword(value)}
+          secureTextEntry={true}
+          style={styles.input}
+          textContentType="password"
+          placeholderTextColor={Colors.text.PRIMARY_COLOR}
+        />
+      </View>
 
       <TouchableOpacity
         style={styles.loginButton}
-        onPress={() =>
-          props.navigation.dispatch(StackActions.replace('HomeScreen'))
-        }>
+        onPress={() => {
+          const auth = {
+            username: userName,
+            password: password,
+          };
+          dispatch(setLoadingSpinner(true));
+          dispatch(getAccessToken(auth));
+        }}>
         <Text style={styles.loginButtonText}>{'Login'}</Text>
       </TouchableOpacity>
 
@@ -55,6 +70,12 @@ export default LoginView;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  middleContainer: {
     flex: 1,
     width: '100%',
     justifyContent: 'center',
@@ -96,8 +117,8 @@ const styles = StyleSheet.create({
     color: Colors.text.PRIMARY_COLOR,
   },
   image: {
-    width: 72,
-    height: 72,
+    width: 120,
+    height: 120,
     marginVertical: 8,
   },
 });

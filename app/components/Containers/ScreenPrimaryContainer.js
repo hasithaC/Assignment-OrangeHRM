@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   ContentContainer: {
-    flex: 1,
+    flexGrow: 1,
     padding: 16,
     alignItems: 'center',
     backgroundColor: Colors.SCREEN_BACKGROUND_COLOR,

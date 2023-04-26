@@ -10,9 +10,11 @@ const LoginScreen = props => {
   return (
     <View style={styles.screen}>
       <NavigationHeader screenTitle={'Assignment - OrangeHRM'} />
-      <ScreenPrimaryContainer>
-        <LoginView navigation={props.navigation} />
-      </ScreenPrimaryContainer>
+      <View style={styles.primaryContainer}>
+        <ScreenPrimaryContainer>
+          <LoginView navigation={props.navigation} />
+        </ScreenPrimaryContainer>
+      </View>
 
       <AppFooter />
     </View>
@@ -25,5 +27,8 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: Colors.SCREEN_BACKGROUND_COLOR,
+  },
+  primaryContainer: {
+    flex: 1,
   },
 });

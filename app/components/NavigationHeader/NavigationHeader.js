@@ -2,6 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {FontSize} from '../../theme/FontSizes';
 import PropTypes from 'prop-types';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const NavigationHeader = props => {
   return (
@@ -20,6 +21,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 8,
+    backgroundColor: Colors.SCREEN_BACKGROUND_COLOR,
   },
   screenTitle: {
     flex: 1,
